@@ -11,6 +11,9 @@ importers:
       '@biomejs/biome':
         specifier: ^1.8.2
         version: 1.8.2
+      citty:
+        specifier: ^0.1.6
+        version: 0.1.6
       unbuild:
         specifier: ^2.0.0
         version: 2.0.0(typescript@5.5.2)
