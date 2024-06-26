@@ -1,3 +1,1 @@
-export const helloLog = () => {
-  console.log("Hello");
-};
+export * from "./main"
