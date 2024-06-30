@@ -1,5 +1,6 @@
 import { defineCommand, runMain as _runMain } from "citty";
 import { consola } from "consola";
+import { colorize } from "consola/utils";
 import { downloadTemplate } from "giget";
 
 const command = defineCommand({
@@ -23,8 +24,13 @@ const command = defineCommand({
     consola.fail(msg);
     consola.start(msg);
     consola.warn(msg);
-    consola.error(msg);
+    consola.error({ message: "error", additional: "yeahh" });
     consola.silent(msg);
+
+    consola.log(colorize("blue", "blue"));
+    consola.log(colorize("yellow", "yellow"));
+    consola.log(colorize("blueBright", "blue bright"));
+    consola.log(colorize("yellowBright", "yellow bright"));
 
     const templateName = await consola.prompt("Which template do you use?", {
       type: "select",
