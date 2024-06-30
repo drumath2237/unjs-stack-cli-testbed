@@ -1,5 +1,6 @@
 import { defineCommand, runMain as _runMain } from "citty";
 import { consola } from "consola";
+import { downloadTemplate } from "giget";
 
 const command = defineCommand({
   args: {
@@ -24,6 +25,21 @@ const command = defineCommand({
     consola.warn(msg);
     consola.error(msg);
     consola.silent(msg);
+
+    const templateName = await consola.prompt("Which template do you use?", {
+      type: "select",
+      options: ["vite-ts", "vite-js"],
+    });
+
+    const doInstall = await consola.prompt("Install dependencies?", {
+      type: "confirm",
+    });
+
+    const { dir, source } = await downloadTemplate(
+      `gh:drumath2237/create-babylon-app/templates/${templateName}`,
+      { install: doInstall, dir: `test-temp/${name}` }
+    );
+    console.log(dir, source);
   },
 });
 
