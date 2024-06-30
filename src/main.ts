@@ -8,6 +8,17 @@ const command = defineCommand({
     name: {
       type: "string",
       alias: "n",
+      description: "Project name",
+    },
+    template: {
+      type: "string",
+      alias: "t",
+      description: "Project template",
+    },
+    install: {
+      type: "boolean",
+      alias: "i",
+      description: "Install dependencies after cloning template",
     },
   },
   run: async (context) => {
