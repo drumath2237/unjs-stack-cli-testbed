@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "citty": "^0.1.6",
-    "consola": "^3.2.3"
+    "consola": "^3.2.3",
+    "giget": "^1.2.3"
   }
 }
